@@ -1,0 +1,145 @@
+/* === DESKTOP FIRST === */
+@media (max-width : 1600px) {
+
+	.top-line {
+		gap:100px;
+		min-height: unset;
+	}
+
+	.top-line .menu .main-menu{
+		display: none !important;
+	}
+	.mobile-menu-button {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.menu-section .main-content{
+		align-self: flex-start;
+	}
+	.menu-section .main-content .h2{
+		font-size: 30px;
+		align-self: flex-start;
+		padding-left: 20px;
+	}
+	
+	
+}
+@media (max-width : 1500px) {
+
+}
+/* xl <= Extra extra large (xxl) */
+@media (max-width : 1400px) {
+
+
+}
+@media (max-width : 1380px) {
+
+}
+
+/* lg <= Extra large (xl) */
+@media (max-width : 1200px) {
+
+
+}
+
+/* md <= Large (lg) */
+@media (max-width : 992px) {
+
+}
+
+/* sm <= Medium (md) */
+@media (max-width : 768px) {
+	.second-section .main-content .inputs-2 .input-1 {
+		display: none;
+	}
+	.second-section .main-content .inputs-2 {
+		align-self: start;
+	}
+	.second-section .main-content .contacts {
+		display: none;
+	}
+	.second-section .main-content .text-2 {
+		display: none;
+	}
+	.menu-section .main-content .h2{
+		font-size: 20px;
+		align-self: flex-start;
+		padding-left: 10px;
+		line-height: normal;
+	}
+	.second-section .main-content .submit {
+		align-self: self-start;
+	}
+
+}
+
+/* xs <= Small (sm) */
+@media (max-width : 576px) {
+	.menu-section .main-content .buttons .button-1 {
+		margin-right: 0;
+	}
+	.menu-section .main-content .content-1 ul {
+		font-size: 16px;
+	}
+	.menu-section .main-content .buttons {
+		max-width: min-content;
+	}
+	.second-section .main-content .inputs .input-1 select {
+		width: 225px;
+	}
+	.second-section .main-content .inputs .input-2 input {
+		width: 225px;
+	}
+	.second-section .main-content .inputs-2 .input-2 input {
+		width: 225px;
+	}
+	.second-section .main-content .inputs-2 .input-2 .img {
+		padding-left: 20px;
+	}
+	.second-section .main-content .inputs-2 {
+		padding-top: 25px;
+	}
+	.second-section .main-content .submit input {
+		width: 225px;
+	}
+}
+
+
+/* === MOBILE FIRST === */
+
+/* Custom (xs) */
+@media (min-width : 0) {
+
+}
+
+/* Small (sm) */
+@media (min-width : 576px) {
+	
+
+}
+
+/* Medium (md) */
+@media (min-width : 768px) {
+
+}
+
+/* Large (lg) */
+@media (min-width : 992px) {
+
+}
+
+/* Extra large (xl) */
+@media (min-width : 1200px) {
+	.text {
+		font-size: 18px;
+	}
+}
+
+/* Extra extra large (xxl) */
+@media (min-width : 1400px) {
+	.text {
+		font-size: 22px;
+	}
+}

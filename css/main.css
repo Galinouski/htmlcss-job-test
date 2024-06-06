@@ -1,0 +1,613 @@
+/* USER VARIABLES SECTION */
+
+:root {
+	--accent: orange;
+	--text: #333;
+	--regular-text: 16px;
+	--lineheight: 1.65;
+	--userfont: roboto-st, sans-serif;
+	--systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
+.row, .row > * { --bs-gutter-x: 1.25rem; }
+
+/* FONTS LOAD SECTION */
+
+@font-face { src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/roboto-italic-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: italic; }
+@font-face { src: url("../fonts/roboto-bold-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 700; font-style: italic; }
+@font-face { src: url("../fonts/raleway.woff2") format("woff2"); font-family: "raleway"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/raleway-extrabold.woff2") format("woff2"); font-family: "raleway-extrabold"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/lato-regular.woff2") format("woff2"); font-family: "lato-regular"; font-weight: 700; font-style: normal; }
+@font-face { src: url("../fonts/lato-bold.woff2") format("woff2"); font-family: "lato-bold"; font-weight: 700; font-style: normal; }
+/* GENERAL CSS SETTINGS */
+
+::placeholder { color: #666; }
+::selection { background-color: var(--accent); color: #fff; }
+input, textarea { outline: none; }
+input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
+input:required:valid, textarea:required:valid { border-color: green; }
+
+body {
+	background-color:rgba(16, 16, 29);
+	font-family: var(--userfont);
+	font-size: var(--regular-text);
+	line-height: var(--lineheight);
+	color: var(--text);
+	min-width: 100%;
+	min-height: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* USER STYLES */
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+	max-width: 1920px;
+}
+.image {
+	max-width: 100%;
+	margin-bottom: var(--bs-gutter-x);
+}
+
+.accent {
+	color: var(--accent);
+	font-weight: bold;
+}
+
+.menu-section {
+	padding-top: 0px;
+}
+
+.top-line{
+	background: url(/images/main.png) no-repeat !important;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	min-width: -webkit-fill-available;
+	min-height: 850px;
+	gap: 200px;
+}
+
+.top-line .menu{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.top-line .menu .main-logo{
+    display: inline-flex;
+	align-self: end;
+    padding-bottom: 70px;
+	width: 247px;
+	height: 35px;
+	padding-left: 376px;
+}
+
+.top-line .menu .main-logo a {
+	text-decoration: none;
+	color: #fff;
+	font-family: raleway-extrabold;
+	font-size: 28px;
+	font-weight: 800;
+	line-height: 32.87px;
+	text-align: left;
+}
+.top-line .menu .main-menu{
+	display: inline-flex;
+	background-color:rgba(16, 16, 29, 0.85);
+	position: fixed;
+    min-height: 200px;
+	min-width: -webkit-fill-available;
+    font-family: lato-regular;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15.6px;
+    gap: 660px;
+    text-align: right;
+}
+
+.top-line .menu .main-menu ul{
+	display: inline-flex;
+    align-items: end;
+    list-style-type: none;
+	gap: 60px;
+}
+.top-line .menu .main-menu ul li{
+	display: inline-block;
+	margin-right: -4px;
+}
+.top-line .menu .main-menu ul li a {
+	color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0.07em;
+    transition: color .25s ease, background-color .25s ease;
+}
+.top-line .menu .main-menu ul li a:active {
+	color: #fff;
+}
+.top-line .menu .main-menu ul li a:hover {
+	color: #43ABF0;
+}
+.mobile-menu {
+	position: absolute;
+    margin-top: 87px;
+    padding-top: 21px;
+    right: 28px;
+	top: 0px;
+    text-align: left;
+    display: none;
+	min-width: 250px;
+    background-color: #10101DE5;
+}
+
+.mobile-menu .nav {
+	display: block;
+}
+		
+.mobile-menu .nav li {
+	display: block;
+}
+		
+.mobile-menu .nav li a {
+	
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	padding: 0 7px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 50px;
+	letter-spacing: 0.07em;
+	transition: color .25s ease, background-color .25s ease;
+}
+
+.menu-section .main-content{
+	display: flex;
+    flex-direction: column;
+    align-self: center;
+	justify-self: center;
+    width: 780px;
+    height: 125px;
+    padding-bottom: 450px;
+    margin-right: 210px;
+}
+
+.menu-section .main-content .h2{
+    align-self: center;
+    color: #333;
+    font-family: lato-bold;
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 57.6px;
+    text-align: left;
+}
+
+.menu-section .main-content .content-1{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+.menu-section .main-content .content-1 .title{
+	display: flex;
+	flex-wrap: wrap;
+    font-family: lato-bold;
+    font-size: 20px;
+    color: #000000;
+    line-height: 24px;
+    text-align: left;
+    padding-top: 80px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+.menu-section .main-content .content-1 ul{
+	display: contents;
+    list-style: none;
+    font-family: lato-regular;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 700;
+    line-height: 35px;
+}
+.menu-section .main-content .buttons {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	padding-top: 60px;
+}
+.menu-section .main-content .buttons .button-1{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 183px;
+	height: 43px;
+	border-radius: 4px;
+	border:white 1px solid;
+	opacity: 0px;
+	background-color: #3E9CDC;
+	font-family: lato-regular;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 15.6px;
+	margin-right: 30px;
+	padding-left: 60px;
+}
+.menu-section .main-content .buttons .button-2{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 183px;
+	height: 43px;
+	border-radius: 4px;
+	border:#6F6D7B 1px solid;
+	opacity: 0px;
+	background-color: white;
+	font-family: lato-regular;
+	color: black;
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 15.6px;
+	text-align: center;
+	padding-left: 50px;
+}
+
+.mobile-menu-button {
+	background-color:rgba(16, 16, 29, 0.8);
+	font-family: lato-regular;
+	min-width: 100%;
+	max-height:60px;
+	font-size: 17px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: none; 
+} 
+
+.mobile-menu-button .logo{
+    display: inline-flex;
+}
+
+.mobile-menu-button .logo a {
+	
+	text-decoration: none;
+	color: #fff;
+	font-family: raleway-extrabold;
+	font-size: 28px;
+	font-weight: 800;
+	line-height: 32.87px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.mobile-menu-button .text{
+	display: inline-flex;
+    color: white;
+	padding-right: 10px;
+
+}
+.second-section {
+	/* background-color: #fff; */
+	min-width: -webkit-fill-available;
+	min-height: 850px;
+}
+.second-section .main-content {
+
+	background-color: #fff;
+	background-image: 
+    /* top, transparent */
+    linear-gradient(
+		rgba(16, 16, 29, 0.85), 
+		rgba(16, 16, 29, 0.85)
+    ),
+    /* image */
+    url(/images/sec-2-bg.png);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+    width: 100%;
+    min-height: 850px;
+	padding-top:60px;
+	
+}
+
+.second-section .main-content .h2 {
+	display: flex;
+	align-self: center;
+	font-family: lato-regular;
+	color:#fff;
+	text-transform: uppercase;
+	font-size: 36px;
+	font-weight: 800;
+	line-height: 43.2px;
+	text-align: left;
+
+}
+.second-section .main-content .text {
+	display: flex;
+	align-self: center;
+	font-family: lato-regular;
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	padding-top: 30px;
+	color:#BBBBBB;
+
+}
+.second-section .main-content .contacts{
+	display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+	padding-top: 80px;
+	max-width: 100%;
+}
+.second-section .main-content .text-2{
+	display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+	font-family: lato-regular;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 19.2px;
+	text-align: center;
+	color: #fff;
+	padding-top: 20px;
+	gap: 50px;
+	max-width: 100%;
+}
+.second-section .main-content .text-2 .title{
+	display: inline-flex;
+	max-width: 200px;
+}
+.second-section .main-content .contacts .contact-1{
+	background: url(/images/ellipse-2.png) no-repeat !important;
+	display: inline-flex;
+	align-self: center;
+	max-width: max-content;
+	max-height: max-content;
+}
+.second-section .main-content .contacts .contact-1 a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 100px;
+    padding-top: 20px;
+}
+.second-section .main-content .contacts .group{
+	display: inline-flex;
+	align-self: center;
+	max-width: max-content;
+	max-height: max-content;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.second-section .main-content .inputs{
+	display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+	padding-top: 80px;
+	max-width: 100%;
+	gap: 25px;
+}
+.second-section .main-content .inputs .input-1{
+	display: inline-flex;
+    align-self: center;
+    justify-self: center;
+}
+.second-section .main-content .inputs .input-1 select{
+	display: block;
+    height: 48px;
+    width: 370px;
+	font-family: lato-regular;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	padding-left: 5px;
+	border: white 1px solid;
+	border-radius: 3px;
+
+}
+.second-section .main-content .inputs .input-2{
+	display: inline-flex;
+    align-self: center;
+    justify-self: center;
+}
+.second-section .main-content .inputs .input-2 input{
+	height: 48px;
+    width: 370px;
+	font-family: lato-regular;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	padding-left: 5px;
+	border: white 1px solid;
+	border-radius: 3px;
+}
+.second-section .main-content .inputs-2{
+	display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+	padding-top: 80px;
+	max-width: 100%;
+	gap: 20px;
+}
+.second-section .main-content .inputs-2 .input-1{
+	display: inline-flex;
+    align-self: flex-end;
+    justify-self: center;
+	flex-direction: column;
+	gap:20px;
+}
+.second-section .main-content .inputs-2 .input-2 {
+	display: inline-flex;
+    align-self: center;
+    justify-self: center;
+}
+.second-section .main-content .inputs-2 .input-1 .range {
+	display: flex;
+}
+.second-section .main-content .inputs-2 .input-1 .range input{
+	display: flex;
+	align-self: self-end;
+    width: 777px;
+	font-family: lato-regular;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+}
+.second-section .main-content .inputs-2 .input-2 input{
+	height: 48px;
+    width: 370px;
+	font-family: lato-regular;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+	border: white 1px solid;
+	border-radius: 3px;
+}
+.second-section .main-content .inputs-2 .input-2 .img{
+	position: absolute;
+	padding-left: 100px;
+	padding-top: 13px;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 18px;
+	text-align: left;
+}
+.second-section .main-content .inputs-2 .input-1 .title{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+
+}
+.second-section .main-content .inputs-2 .input-1 .title .cont-1{
+	display: inline-flex;
+	color:#fff;
+	font-family: lato-regular;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+}
+.second-section .main-content .inputs-2 .input-1 .title .cont-2{
+	display: inline-flex;
+	color:#fff;
+	font-family: lato-regular;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	text-align: left;
+}
+.second-section .main-content .submit{
+	display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+	padding-top: 80px;
+	max-width: 100%;
+}
+
+.second-section .main-content .submit input{
+	background-color: #3E9CDC;
+	height: 48px;
+    width: 370px;
+	font-family: lato-regular;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.6px;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	border: white 1px solid;
+	border-radius: 4px;
+}
+
+.footer-section {
+	display: block;
+	min-width: -webkit-fill-available;
+}
+
+.footer-section .main-content {
+	background-color: #3D4050;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	min-height: 80px;
+	gap: 45px
+}
+
+.footer-section .main-content .text-1 {
+	display: inline-flex;
+	align-self: center;
+	color: #fff;
+	font-family: lato-regular;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 15.6px;
+	text-align: left;
+}
+.footer-section .main-content .def {
+	display: inline-flex;
+	align-self: center;
+	color: #fff;
+	font-family: lato-regular;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 15.6px;
+	text-align: left;
+}
+.footer-section .main-content .contact-1 {
+	display: inline-flex;
+	align-self: center;
+	gap:10px;
+}
+.footer-section .main-content .contact-1 .img{
+	display: inline-flex;
+}
+.footer-section .main-content .contact-1 .txt{
+	display: inline-flex;
+	color: #fff;
+	font-family: lato-regular;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 15.6px;
+	text-align: left;
+}
+.footer-section .main-content .contact-1 .txt a{
+	text-decoration: none;
+	color: white;
+}
